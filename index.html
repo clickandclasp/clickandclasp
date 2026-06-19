@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click & Clasp | Socials & Contact</title>
+    
+    <!-- Favicon using your logo file -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Premium Fonts: Playfair Display for Serifs, Inter for Clean Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for precise, clean line icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-gradient-start: #0a232a;
+            --bg-gradient-end: #0e333d;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: rgba(0, 0, 0, 0.4);
+            
+            /* High contrast cream buttons from the reference image */
+            --btn-bg: #f5efe4; 
+            --btn-text: #1a2e35;
+            --btn-hover: #eae1d0;
+            
+            --text-light: #ffffff;
+            --text-muted: #a3b8bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Central Container */
+        .card {
+            width: 100%;
+            max-width: 440px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 45px 30px;
+            box-shadow: 0 20px 50px var(--glass-shadow);
+            text-align: center;
+        }
+
+        /* Header / Logo Layout */
+        .header {
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+        }
+
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-light);
+            font-size: 1.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .brand-subtitle {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        /* Links & Buttons Stack */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 50px; /* Pillow rounded shape from image_64d108.jpg and reference */
+            font-weight: 500;
+            font-size: 0.98rem;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .link-btn i {
+            font-size: 1.2rem;
+            width: 28px;
+            text-align: left;
+        }
+
+        .link-btn span {
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 28px; /* Perfectly centers text balancing the left icon */
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Hover & Active States */
+        .link-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        .link-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Premium Minimalist Footer */
+        .footer {
+            margin-top: 35px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        /* Mobile Optimization Guardrails */
+        @media (max-width: 400px) {
+            .card {
+                padding: 35px 20px;
+            }
+            .brand-title {
+                font-size: 1.6rem;
+            }
+            .link-btn {
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Brand Header Header -->
+        <div class="header">
+            <!-- Ensure your logo file is named logo.png inside your GitHub repo root folder -->
+            <img src="logo.png" alt="Click & Clasp Logo" class="logo">
+            <h1 class="brand-title">Click & Clasp</h1>
+            <div class="brand-subtitle">Socials & Contact</div>
+        </div>
+
+        <!-- Links Grid Stack -->
+        <div class="links-container">
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/clickandclasp_/" target="_blank" class="link-btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <!-- Facebook Page -->
+            <a href="https://www.facebook.com/profile.php?id=61590269607111" target="_blank" class="link-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook Page</span>
+            </a>
+
+            <!-- Reviews -->
+            <a href="https://www.facebook.com/share/g/1CsQDj5F3F/" target="_blank" class="link-btn">
+                <i class="fa-regular fa-star"></i>
+                <span>Reviews</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:clickandclasp@gmail.com" class="link-btn">
+                <i class="fa-regular fa-envelope"></i>
+                <span>clickandclasp@gmail.com</span>
+            </a>
+
+            <!-- Mobile Number -->
+            <a href="tel:09936901203" class="link-btn">
+                <i class="fa-solid fa-phone"></i>
+                <span>0993 690 1203</span>
+            </a>
+
+        </div>
+
+        <!-- Footer Footer -->
+        <div class="footer">
+            &copy; 2026 Click & Clasp. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
