@@ -1,176 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="icon" type="image/png" href="logo.png?v=1">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Click & Clasp | Order Form</title>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click & Clasp | Socials & Contact</title>
+    
+    <!-- Favicon link with version tag to force browser refresh -->
+    <link rel="icon" type="image/png" href="logo.png?v=1">
+    
+    <!-- FontAwesome for clean social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-/* Matching Aesthetics */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
+    <style>
+        /* Exact font imports from your order form */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-:root {
-    --bg-gradient-start: #0a232a;
-    --bg-gradient-end: #0e333d;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --btn-bg: #f5efe4; 
-    --btn-text: #1a2e35;
-    --text-light: #ffffff;
-}
+        /* Exact background styling from your order form */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: 
+                radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 30%),
+                linear-gradient(180deg, #0b2d3a, #102d40, #0a2230);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px 14px;
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at center, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%);
-    color: white;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px 20px;
-}
+        /* Exact main container styling from your order form */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 40px 24px;
+            box-shadow: 
+                0 10px 40px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.06);
+            box-sizing: border-box;
+        }
 
-.container {
-    width: 100%;
-    max-width: 440px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    text-align: center;
-}
+        /* Logo Spacing Adjustment */
+        .logo {
+            width: 75px;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.85rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
-    color: var(--text-light);
-}
+        /* Exact H1 styling from your order form */
+        h1 {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            letter-spacing: 4px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #ffffff;
+        }
 
-h2 {
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-top: 6px;
-    margin-bottom: 30px;
-}
+        /* Exact H2 styling from your order form */
+        h2 {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 5px;
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 6px;
+            margin-bottom: 35px;
+            opacity: 0.8;
+            text-align: center;
+        }
 
-input, select, textarea {
-    width: 100%;
-    padding: 14px;
-    margin: 8px 0;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    font-family: 'Inter', sans-serif;
-}
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Primary Button Styling */
-button {
-    width: 100%;
-    padding: 16px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 50px;
-    background: var(--btn-bg);
-    color: var(--btn-text);
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
+        /* Links styled EXACTLY like your order form's sleek input fields */
+        .link-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 14px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            transition: 0.25s ease;
+            border: 1px solid rgba(255,255,255,0.12);
+            text-align: left;
+        }
 
-button:hover {
-    background: #eae1d0;
-    transform: translateY(-2px);
-}
+        .link-item i {
+            font-size: 16px;
+            width: 25px;
+            opacity: 0.85;
+        }
 
-.card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px 0;
-    text-align: left;
-}
+        .link-item span {
+            flex-grow: 1;
+            padding-left: 5px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
 
-.card h3 {
-    font-family: 'Playfair Display', serif;
-    margin-top: 0;
-}
+        /* Matching the subtle interactive hover from your form inputs */
+        .link-item:hover {
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-2px);
+        }
 
-#total {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin: 25px 0;
-}
+        /* Exact footer text styles */
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            opacity: 0.5;
+        }
 
-/* Mobile Adjustments */
-@media (max-width:480px){
-    .container { padding: 30px 20px; }
-}
-</style>
+        /* Exact responsive breakpoints from your order form */
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 20px;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Click & Clasp</h1>
-    <h2>Order Form</h2>
 
-    <div id="date" style="font-size: 12px; opacity: 0.6; margin-bottom: 5px;"></div>
-    <div id="order" style="font-size: 12px; opacity: 0.6; margin-bottom: 20px;"></div>
+    <!-- Brand Emblem -->
+    <img src="logo.png" alt="Click & Clasp Logo" class="logo">
 
-    <input id="name" placeholder="Name">
-    <input id="email" placeholder="Email/Instagram">
-    <input id="school" placeholder="School">
-    <input id="grade" placeholder="Grade">
-    <input id="section" placeholder="Section">
+    <h1>CLICK & CLASP</h1>
+    <h2>SOCIALS & CONTACT</h2>
 
-    <div id="items"></div>
+    <!-- Navigation Stack -->
+    <div class="links-wrapper">
+        
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/clickandclasp_/" target="_blank" class="link-item">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
 
-    <button onclick="addItem()">+ Add Keychain</button>
-    <h3 id="total">Total: ₱0</h3>
-    <button id="submitBtn" onclick="submitOrder()">Submit Order</button>
+        <!-- Facebook Page -->
+        <a href="https://www.facebook.com/profile.php?id=61590269607111" target="_blank" class="link-item">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span>Facebook Page</span>
+        </a>
+
+        <!-- Reviews -->
+        <a href="https://www.facebook.com/share/g/1CsQDj5F3F/" target="_blank" class="link-item">
+            <i class="fa-regular fa-star"></i>
+            <span>Customer Reviews</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:clickandclasp@gmail.com" class="link-item">
+            <i class="fa-regular fa-envelope"></i>
+            <span>clickandclasp@gmail.com</span>
+        </a>
+
+        <!-- Mobile Number -->
+        <a href="tel:09936901203" class="link-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>0993 690 1203</span>
+        </a>
+
+    </div>
+
+    <!-- Footer Tagline -->
+    <div class="footer">
+        &copy; 2026 Click & Clasp. All rights reserved.
+    </div>
+
 </div>
 
-<script>
-// Keep your existing JavaScript functionality here
-emailjs.init("tp0-EdHc-e3iYbotR");
-let orderNum = Math.floor(Math.random()*90000)+10000;
-document.getElementById("order").innerText = "Order #: " + orderNum;
-document.getElementById("date").innerText = "Date: " + new Date().toLocaleDateString();
-let itemCount = 0;
-
-function addItem(){
-    itemCount++;
-    let div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `
-        ${itemCount > 1 ? `<button class="remove-btn" onclick="removeItem(this)">×</button>` : ""}
-        <h3>Item ${itemCount}</h3>
-        <select onchange="toggleSections(this)">
-            <option value="design">Pre-made (₱30)</option>
-            <option value="custom">Custom (₱40)</option>
-        </select>
-        <div class="designSection" style="display:block">
-            <div class="design-row"><div class="designs">${[1,2,3,4,5,6,7,8].map(n=>`<img src="design${n}.png" data-name="design${n}" onclick="selectDesign(this)">`).join("")}</div></div>
-        </div>
-        <div class="customSection" style="display:none;"><textarea placeholder="Custom Request..."></textarea></div>
-    `;
-    document.getElementById("items").appendChild(div);
-    updateTotal();
-}
-// ... (Include your existing handleFiles, selectDesign, submitOrder, etc., here)
-addItem();
-</script>
 </body>
 </html>
